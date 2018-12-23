@@ -1,0 +1,26 @@
+3.17~3.19 실습 과제
+
+1.답
+SELECT employee_id, last_name, salary* 12 "ANNUAL SALARY"
+FROM employees; 
+
+오류 
+1. last_name뒤에 쉼표가 없었다. 
+2. sal이 아니라 salary로 수정 
+3. 연산자 곱하기는 x가 아니라 *이다
+4. 열명을 재명명할때는 열명 밖에 " "가 붙어야 한다
+
+2.답
+DESCRIBE DEPARTMENTS (테이블의 구조 표시)
+
+SELECT * FROM DEPARTMENTS 
+
+3.답
+SELECT 	PHONE_NUMBER, LAST_NAME,JOB_ID , HIRE_DATE "STARTDATE"
+FROM EMPLOYEES
+
+
+4.답
+
+SELECT last_name ||' , ' || job_id AS "Employee and Title"
+FROM EMPLOYEES

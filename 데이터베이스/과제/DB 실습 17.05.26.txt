@@ -1,0 +1,26 @@
+2013104101 컴퓨터공학과 이영주
+
+실습 
+
+1.
+create table emp 
+             (ID number(6), NAme varchar2(20))
+//입력후
+
+create table DETP
+             (ID number(7), NAME varchar2(30))
+
+2.
+alter table emp 
+add constraint my_emp_id_pk primary Key ("ID")
+
+3.
+alter table detp
+add constraint my_detp_id_pk primary Key ("ID")
+
+
+4.
+select constraint_name, constraint_type 
+from user_constraints 
+where table_name = 'EMP' 
+or table_name = 'DETP'

@@ -1,0 +1,46 @@
+2013104101 컴퓨터공학과 이영주
+
+실습 
+
+1.
+select first_name, hire_date
+from employees
+where department_id =
+(select department_id
+from employees
+where last_name like 'Zlotkey')
+and last_name <> 'Zlotkey'
+
+
+2.
+select employee_Id, first_name, salary
+from employees
+where salary > 
+(select avg(salary)
+from employees)
+order by salary asc
+
+3.
+select employee_Id, first_name
+from employees
+where department_id  in
+(select department_id
+from employees
+where first_name like '%u%')
+
+
+4. 
+select first_name,department_id ,job_id
+from employees
+where department_id in
+(select department_id
+from departments
+where location_id = 1700)
+
+5. 
+select department_id , first_name, job_id
+from employees
+where department_id like
+(select department_id
+from departments
+where department_name like 'Executive')

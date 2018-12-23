@@ -1,0 +1,21 @@
+2013104101 컴퓨터공학과 이영주
+
+실습 
+
+1.
+Select MAX(salary) "Maximum", MIN(salary) "Minimum",Sum(salary) "Sum" ,Round(AVG(salary)) "Average"
+from employees;
+
+
+2.
+
+Select job_id , MAX(salary) "Maximum", MIN(salary) "Minimum",Sum(salary) "Sum" ,Round(AVG(salary)) "Average"
+from employees
+GROUP BY(job_id);
+
+3.
+Select d.department_name "Name", l.city "Location", Count(*) "Number of People" , Round(AVG(e.Salary),2) "Salary"
+from employees e ,departments d ,locations l
+where d.department_id = e.department_id
+and l.location_id = d.location_id
+group by d.department_name , l.city;

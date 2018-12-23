@@ -1,0 +1,40 @@
+2013104101 컴퓨터공학과 이영주
+
+실습 
+
+
+1.급여가 $12,000를 넘는 사원의 이름과 급여를 표시
+SELECT first_name, salary
+From employees
+WHERE salary > 12000
+
+2.사원 번호가 176인 사원의 이름과 부서 번호를 표시
+SELECT first_name, salary
+From employees
+WHERE EMPLOYEE_ID= 176
+
+3.급여가 $5,000에서 $12,000 사이에 포함되지 않는 모든 사원의 이름과 급여를 표시
+SELECT first_name, salary
+From employees
+WHERE salary NOT Between 5000 and 12000; 
+
+
+5. 부서 20 및 50에 속하는 모든 사원의 이름과 부서 번호를 이름을 기준으로 영문자순으로 표시
+
+SELECT first_name, department_id
+From employees
+where department_id in (20,50)
+
+
+8.관리자가 없는 모든 사원의 이름과 업무 ID를 표시
+
+SELECT first_name, job_id
+From employees
+Where Manager_id is NULL
+
+9. 커미션을 받는 모든 사원의 이름, 급여 및 커미션을 급여 및 커미션을 기준으로 내림차순으로 정렬하여 표시
+
+SELECT first_name, salary , COMMISSION_PCT	
+From employees
+Where COMMISSION_PCT is NOT NULL
+order by salary DESC, COMMISSION_PCT DESC

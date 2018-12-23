@@ -1,0 +1,55 @@
+2013104101 컴퓨터공학과 이영주
+
+실습 
+
+1.
+create table dept
+             (ID number(7),
+              Name Varchar2(25));
+
+2.
+insert into  dept(id,name)
+select department_id ,  department_name
+from departments
+
+3.
+create table EMP
+       (ID Number(7),
+        Last_NAME VARCHAR2(25),
+        FIRST_NAME VARCHAR2(25),
+        DEPT_ID VARCHAR2(7)) 
+     
+
+
+4.
+Alter table emp
+modify (last_name Varchar2(50))
+
+5.
+drop table emp
+
+
+6.
+create table employees2   
+                     
+as          select employee_id "ID", First_name "FIRST_NAME",  last_name "LAST_NAME",  salary "SALARY" ,  
+            department_id "DEPT_ID"
+            from employees
+
+7.
+rename employees2 to emp
+
+
+8.
+alter table emp
+drop (first_name);
+
+
+
+
+
+6.
+
+7.
+
+8.

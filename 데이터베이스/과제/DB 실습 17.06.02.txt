@@ -1,0 +1,52 @@
+2013104101 컴퓨터공학과 이영주
+
+실습 
+
+1.
+create table emp
+AS 
+(SELECT  employee_id, first_name,last_name,email,phone_number,hire_date,job_id,salary, COMMISSION_PCT , MANAGER_ID, DEPARTMENT_ID
+FROM     employees)
+ 
+//이후
+DELETE FROM emp
+WHERE employee_id= 300
+or employee_id= 301
+
+//이후
+INSERT INTO emp 
+VALUES (300, 'HeungMin','Son','Sson',NULL,SYSDATE,'TOT',NULL,NULL,NULL,NULL)
+//이후  
+INSERT INTO emp
+VALUES (301, 'JiSung','Park','Ppark',NULL,SYSDATE,'MAN',NULL,NULL,NULL,NULL)
+//이후
+INSERT INTO emp
+VALUES (302, 'SeungWoo','Lee','Llee',NULL,SYSDATE,'BAR',NULL,NULL,NULL,NULL)
+
+2.
+update emp
+set job_id = 'QPR'
+where employee_id = 301
+
+
+3.
+ 
+DELETE FROM emp
+WHERE employee_id= 302
+
+4.
+rename emp to emp2
+
+
+5.
+alter TABLE emp2
+add CONSTRAINT "const_pk_email" PRIMARY KEY(email);
+
+
+6.
+select constraint_name, constraint_type 
+from user_constraints 
+where table_name = 'EMP2' 
+
+7.
+drop table emp2

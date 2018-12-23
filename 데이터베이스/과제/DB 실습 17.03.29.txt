@@ -1,0 +1,31 @@
+2013104101 컴퓨터공학과 이영주
+
+실습 
+
+
+1.
+select SYSDATE "DATA"
+from dual
+
+2.
+select INITCAP(first_name),LENGTH(first_name)
+from employees
+WHERE  first_name LIKE 'J%' 
+or first_name LIKE  'A%'  
+or first_name LIKE  'M%'
+order by first_name asc
+
+3.
+select DECODE(job_id, 'AD_PRES', 'A' ,'ST_MAN',  'B', 'IT_PROG', 'C' , 'SA_REP', 'D' , 'ST_CLERK', 'E' ,'0') GRADE
+from employees
+
+
+4.
+select Case job_id when 'AD_PRES' then 'A' 
+                   when 'ST_MAN' then 'B' 
+                   when 'IT_PROG' then 'C' 
+                   when 'SA_REP' then 'D'
+                   when 'ST_CLERK' then 'E' 
+                   else '0' 
+                   end as "GRADE"
+from employees

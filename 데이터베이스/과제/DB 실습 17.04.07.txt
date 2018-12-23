@@ -1,0 +1,43 @@
+2013104101 컴퓨터공학과 이영주
+
+실습 
+
+
+1. 
+select e.FIRST_NAME ,  d.department_name, d.location_id , l.city
+from employees  e INNER JOIN departments d ON (e.department_id = d.department_id) 
+                  INNER JOIN locations l ON (d.location_id =l.location_id )
+where l.city = 'Oxford'
+And COMMISSION_PCT is not null
+
+2. 
+select employee_id ,  first_name , salary*1.15 "New Salary"
+from employees   
+
+3. 
+select first_name , NVL(TO_CHAR(commission_pct), 'No Commission') "COMM"
+from employees  
+
+
+4.
+select first_name ,job_id , salary
+from employees
+where job_id like 'SA_REP'
+or job_id like 'ST_CLERK'
+and salary <> 2500 
+And salary <> 3500
+and salary <> 7000
+
+
+5.
+select first_name "Employee" ,salary "Monthly Salary"
+from employees
+Where salary BETWEEN  5000 and 12000
+and department_id in (20,50)
+
+6.
+select first_name"Employee" 
+from employees
+where first_name like '__a%'
+
+
